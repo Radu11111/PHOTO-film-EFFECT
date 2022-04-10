@@ -1,0 +1,79 @@
+/* RESET */
+body {
+    /* hw3:move the gradient to 1/3rd */
+    background:
+     radial-gradient(
+         var(--main-bgc-light),
+         var(--main-bgc-dark )),
+         url(2.jpg);
+         background-blend-mode:hard-light;
+         background-size: cover,cover;
+     height: 100vh;
+    --film-color: #000b;
+    --main-bgc-dark:#0D0000;
+    --main-bgc-light:#8C6F5E;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+/* LAYOUT */
+.origin {
+    width: 0;
+    height: 0;
+    background-color: green;
+    
+    position: absolute;
+    top: 50%;
+    left: 33%;
+}
+.origin .film {
+    background-size:20px 32px;
+    filter: drop-shadow( 0.5vw 0.5vh 0.5vh var(--film-color));
+    width: calc( 7 * ( 2 * 1vw + 404px ) );
+    position: relative;
+    left: -33vw;
+    top: -178px;
+}
+.origin .film::before {
+    content: "";
+    height: 3vh;
+    display: block;
+    background: radial-gradient(transparent 49%,var(--film-color) 51%); 
+    background-size: 2vw 100%;
+}
+.origin .film::after {
+    content: "";
+    height: 3vh;
+    display: block;
+    background: radial-gradient(transparent 49%,var(--film-color) 51%);
+    background-size: 2vw 100%;
+}
+.origin .film li {
+    display: inline-block;
+    padding: 0 1vw;
+    background-color: var(--film-color);
+}
+.origin .film li img {
+   /* visibility: hidden;  */
+   /* hw1:use visibility--opacity:0-done */
+   /* hw2: use border image */
+}
+.v-guide {
+    position: absolute;
+    height: 100vh;
+    top: -50vh;
+    left: 0;
+    width: 1px;
+    background-color: #555;
+}
+.h-guide {
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    left: -33vw;
+    height: 1px;
+    background-color: #555;
+}
